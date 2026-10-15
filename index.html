@@ -26,12 +26,35 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Simple things, made well.</h1>
-        <p>A tiny demo shop with dummy products, a working cart, and a fake checkout.</p>
-        <a href="#shop" class="btn btn-primary">Browse the shop</a>
+    <section class="hero" id="hero" aria-roledescription="carousel" aria-label="Featured collections">
+      <div class="hero__viewport" id="heroViewport">
+        <div class="hero__track" id="heroTrack">
+          <article class="hero__slide" data-bg="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&h=900&fit=crop">
+            <div class="hero__content container">
+              <h1>Simple things, made well.</h1>
+              <p>A tiny demo shop with dummy products, a working cart, and a fake checkout.</p>
+              <a href="#shop" class="btn btn-primary">Browse the shop</a>
+            </div>
+          </article>
+          <article class="hero__slide" data-bg="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=900&fit=crop">
+            <div class="hero__content container">
+              <h1>New arrivals for the season.</h1>
+              <p>Hand-picked essentials, made in small batches by independent makers.</p>
+              <a href="#shop" class="btn btn-primary">Shop new arrivals</a>
+            </div>
+          </article>
+          <article class="hero__slide" data-bg="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1600&h=900&fit=crop">
+            <div class="hero__content container">
+              <h1>Objects you'll keep for years.</h1>
+              <p>Solid brass, oak, wool, and linen — built to age, not be replaced.</p>
+              <a href="#shop" class="btn btn-primary">See the collection</a>
+            </div>
+          </article>
+        </div>
       </div>
+      <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Previous slide">&#8249;</button>
+      <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Next slide">&#8250;</button>
+      <div class="hero__dots" id="heroDots" role="tablist" aria-label="Choose slide"></div>
     </section>
 
     <section id="shop" class="container products-section">
@@ -50,8 +73,46 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; Northwind Goods — a demo storefront.</p>
+    <div class="container site-footer__grid">
+      <div class="site-footer__col site-footer__brand">
+        <div class="site-footer__logo">Northwind<span>Goods</span></div>
+        <p class="site-footer__tagline">Simple things, made well.</p>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Shop</h4>
+        <ul class="site-footer__list">
+          <li><a href="#shop">All products</a></li>
+          <li><a href="#shop">New arrivals</a></li>
+          <li><a href="#shop">Collections</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Company</h4>
+        <ul class="site-footer__list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Stay in touch</h4>
+        <p class="site-footer__tagline">Letters from the workshop, once a month.</p>
+        <form class="site-footer__newsletter" onsubmit="event.preventDefault();">
+          <label for="newsletterEmail" class="visually-hidden">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="you@example.com" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>&copy; <span id="footerYear"></span> Northwind Goods &mdash; a demo storefront.</p>
+      <p class="site-footer__legal">
+        <a href="#">Privacy</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="#">Terms</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="#">Shipping</a>
+      </p>
     </div>
   </footer>
 

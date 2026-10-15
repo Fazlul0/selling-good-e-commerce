@@ -337,6 +337,85 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// ----- Hero slideshow -----
+function initHeroSlideshow() {
+  const track = document.getElementById('heroTrack');
+  const dotsContainer = document.getElementById('heroDots');
+  const prevBtn = document.getElementById('heroPrev');
+  const nextBtn = document.getElementById('heroNext');
+  if (!track || !dotsContainer) return;
+
+  const slides = Array.from(track.querySelectorAll('.hero__slide'));
+
+  // Apply background image from data-bg so the markup stays semantic
+  slides.forEach(slide => {
+    const bg = slide.dataset.bg;
+    if (bg) slide.style.backgroundImage = `url('${bg}')`;
+  });
+
+  // Build dots
+  dotsContainer.innerHTML = slides.map((_, i) =>
+    `<button class="hero__dot" data-slide="${i}" role="tab" aria-label="Go to slide ${i + 1}"></button>`
+  ).join('');
+  const dots = Array.from(dotsContainer.querySelectorAll('.hero__dot'));
+
+  let current = 0;
+  let autoplayId = null;
+  const AUTOPLAY_MS = 5000;
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => {
+      const isActive = i === current;
+      d.classList.toggle('is-active', isActive);
+      d.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayId = setInterval(next, AUTOPLAY_MS);
+  }
+  function stopAutoplay() {
+    if (autoplayId) {
+      clearInterval(autoplayId);
+      autoplayId = null;
+    }
+  }
+
+  // Events
+  prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+  nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+  dotsContainer.addEventListener('click', (e) => {
+    const dot = e.target.closest('[data-slide]');
+    if (!dot) return;
+    goTo(parseInt(dot.dataset.slide, 10));
+    startAutoplay();
+  });
+
+  // Pause on hover, resume on leave
+  const hero = document.getElementById('hero');
+  hero.addEventListener('mouseenter', stopAutoplay);
+  hero.addEventListener('mouseleave', startAutoplay);
+
+  // Keyboard support when hero is focused
+  hero.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { prev(); startAutoplay(); }
+    else if (e.key === 'ArrowRight') { next(); startAutoplay(); }
+  });
+  hero.setAttribute('tabindex', '0');
+
+  goTo(0);
+  startAutoplay();
+}
+
 // ----- Init -----
 renderProducts();
 updateCartUI();
+initHeroSlideshow();
+const yearEl = document.getElementById('footerYear');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
