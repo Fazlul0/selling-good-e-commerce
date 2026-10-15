@@ -12,7 +12,7 @@
       <a href="#" class="logo">Northwind<span>Goods</span></a>
       <nav class="main-nav">
         <a href="#shop">Shop</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
       </nav>
       <button class="cart-button" id="cartButton" aria-label="Open cart">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -62,13 +62,17 @@
       <div class="product-grid" id="productGrid"></div>
     </section>
 
-    <section id="about" class="container about-section">
-      <h2 class="section-title">About this demo</h2>
-      <p>
-        This is a static e-commerce front-end with no backend. Product data is hard-coded,
-        the cart is saved in <code>localStorage</code>, and checkout is a fake form. Open
-        <code>index.html</code> directly in your browser to try it.
-      </p>
+    <section id="about" class="container about-preview">
+      <div class="about-preview__text">
+        <p class="about-preview__eyebrow">About us</p>
+        <h2 class="about-preview__title">A small shop with a long view.</h2>
+        <p class="about-preview__lede">
+          We design, source, and ship everyday objects built to last &mdash;
+          and we tell you, plainly, where each one comes from.
+        </p>
+        <a href="about.html" class="btn btn-outline">Read our story</a>
+      </div>
+      <div class="about-preview__image" style="background-image:url('https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=900&h=1100&fit=crop');"></div>
     </section>
   </main>
 

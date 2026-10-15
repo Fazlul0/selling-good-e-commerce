@@ -413,9 +413,72 @@ function initHeroSlideshow() {
   startAutoplay();
 }
 
+// ----- About page content -----
+const TEAM = [
+  {
+    name: 'Mara Lindqvist',
+    role: 'Founder & Buyer',
+    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop',
+    bio: 'Started the shop in 2017 after a decade in product design. Spends most of the year visiting makers.'
+  },
+  {
+    name: 'Theo Marchetti',
+    role: 'Workshop Lead',
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=600&fit=crop',
+    bio: 'A former furniture restorer. Runs our small repair bench and quality-checks every order before it ships.'
+  },
+  {
+    name: 'Aiyana Reyes',
+    role: 'Customer & Studio',
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=600&fit=crop',
+    bio: 'Answers the phone, writes the newsletter, and photographs most of what you see on the site.'
+  },
+  {
+    name: 'Jonas Park',
+    role: 'Logistics & Ops',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop',
+    bio: 'Keeps the shelves stocked and the orders moving. Knows the postal rate tables by heart.'
+  }
+];
+
+const TIMELINE = [
+  { year: '2017', text: 'Northwind Goods opens in a 320 sq ft loft on Ceres Street with seven products and one card reader.' },
+  { year: '2019', text: 'We hire our first full-time employee and move to a slightly larger space two doors down.' },
+  { year: '2021', text: 'The website launches. A quiet version of the catalog, written and shipped by Mara and one freelancer.' },
+  { year: '2023', text: 'A repair bench is added to the back of the shop. We start offering free tune-ups for any product we\'ve sold.' },
+  { year: '2024', text: 'We cross 40 independent makers across 11 countries. The team grows to four.' },
+  { year: '2025', text: 'We publish a full materials origin page for every line we carry, and we add a take-back program for end-of-life goods.' }
+];
+
+function renderAbout() {
+  const teamEl = document.getElementById('aboutTeam');
+  if (teamEl) {
+    teamEl.innerHTML = TEAM.map(member => `
+      <article class="about-team__card">
+        <div class="about-team__photo" style="background-image:url('${member.photo}')"></div>
+        <div class="about-team__info">
+          <h3 class="about-team__name">${member.name}</h3>
+          <p class="about-team__role">${member.role}</p>
+          <p class="about-team__bio">${member.bio}</p>
+        </div>
+      </article>
+    `).join('');
+  }
+  const timelineEl = document.getElementById('aboutTimeline');
+  if (timelineEl) {
+    timelineEl.innerHTML = TIMELINE.map(item => `
+      <li>
+        <p class="about-timeline__year">${item.year}</p>
+        <p class="about-timeline__text">${item.text}</p>
+      </li>
+    `).join('');
+  }
+}
+
 // ----- Init -----
 renderProducts();
 updateCartUI();
 initHeroSlideshow();
+renderAbout();
 const yearEl = document.getElementById('footerYear');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

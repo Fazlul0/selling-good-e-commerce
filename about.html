@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Northwind Goods</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Northwind<span>Goods</span></a>
+      <nav class="main-nav">
+        <a href="index.html#shop">Shop</a>
+        <a href="about.html" class="is-active">About</a>
+      </nav>
+      <button class="cart-button" id="cartButton" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="about-page">
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Our story</p>
+        <h1 class="page-hero__title">A small shop with a long view.</h1>
+        <p class="page-hero__lede">
+          Northwind Goods started in 2017 in a converted boat-repair loft in
+          Portsmouth, New Hampshire. We design, source, and ship everyday
+          objects built to last &mdash; and we tell you, plainly, where each
+          one comes from.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats strip -->
+    <section class="container about-stats">
+      <div class="about-stats__item">
+        <div class="about-stats__value">7</div>
+        <div class="about-stats__label">Years in business</div>
+      </div>
+      <div class="about-stats__item">
+        <div class="about-stats__value">42</div>
+        <div class="about-stats__label">Independent makers</div>
+      </div>
+      <div class="about-stats__item">
+        <div class="about-stats__value">11</div>
+        <div class="about-stats__label">Countries of origin</div>
+      </div>
+      <div class="about-stats__item">
+        <div class="about-stats__value">98%</div>
+        <div class="about-stats__label">Orders shipped within 48h</div>
+      </div>
+    </section>
+
+    <!-- Story / split -->
+    <section class="container about-split">
+      <div class="about-split__image" style="background-image:url('https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1000&h=1200&fit=crop');"></div>
+      <div class="about-split__text">
+        <h2>How we work</h2>
+        <p>
+          Every product in our shop comes from a workshop we've visited. We
+          carry eight to ten lines at a time, and we replace a line only when
+          the maker can no longer meet our standards. Most of our suppliers
+          are family-run, two or three people deep, and we've been working
+          with the same ones since the first year.
+        </p>
+        <p>
+          We don't run sales. We don't release limited drops. We price
+          honestly, and we mark up just enough to keep the lights on, pay our
+          team, and set aside a small fund for repair or replacement if
+          something arrives less than perfect.
+        </p>
+      </div>
+    </section>
+
+    <section class="container about-split about-split--reverse">
+      <div class="about-split__image" style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=1000&h=1200&fit=crop');"></div>
+      <div class="about-split__text">
+        <h2>What we believe</h2>
+        <ul class="about-beliefs">
+          <li>
+            <strong>Fewer, better.</strong> A single object used for a decade
+            beats a closet of replacements.
+          </li>
+          <li>
+            <strong>Honest materials.</strong> If we can't tell you where
+            something was made and by whom, we don't carry it.
+          </li>
+          <li>
+            <strong>Quiet design.</strong> Nothing here is loud, branded, or
+            trying to date itself. Form follows function, and then we leave
+            it alone.
+          </li>
+          <li>
+            <strong>Repair first.</strong> If something breaks, we'd rather
+            fix it than sell you a new one.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="container about-team-section">
+      <h2 class="section-title">The team</h2>
+      <p class="about-team-section__lede">
+        A four-person shop. We answer the phones, pack the orders, and write
+        the copy ourselves.
+      </p>
+      <div class="about-team" id="aboutTeam"></div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="container about-timeline-section">
+      <h2 class="section-title">A short timeline</h2>
+      <ol class="about-timeline" id="aboutTimeline"></ol>
+    </section>
+
+    <!-- CTA -->
+    <section class="container about-cta">
+      <div class="about-cta__card">
+        <h2>Come by, or say hello.</h2>
+        <p>
+          The shop is open Wednesday through Sunday, 11 to 6, at
+          12 Ceres Street in Portsmouth. Or write to us anytime at
+          <a href="mailto:hello@northwindgoods.example">hello@northwindgoods.example</a>.
+        </p>
+        <a href="index.html#shop" class="btn btn-primary">Browse the shop</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__col site-footer__brand">
+        <div class="site-footer__logo">Northwind<span>Goods</span></div>
+        <p class="site-footer__tagline">Simple things, made well.</p>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Shop</h4>
+        <ul class="site-footer__list">
+          <li><a href="index.html#shop">All products</a></li>
+          <li><a href="index.html#shop">New arrivals</a></li>
+          <li><a href="index.html#shop">Collections</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Company</h4>
+        <ul class="site-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Stay in touch</h4>
+        <p class="site-footer__tagline">Letters from the workshop, once a month.</p>
+        <form class="site-footer__newsletter" onsubmit="event.preventDefault();">
+          <label for="newsletterEmail" class="visually-hidden">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="you@example.com" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>&copy; <span id="footerYear"></span> Northwind Goods &mdash; a demo storefront.</p>
+      <p class="site-footer__legal">
+        <a href="#">Privacy</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="#">Terms</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="#">Shipping</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer (shared with the shop) -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h3>Your Cart</h3>
+      <button class="icon-button" id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-drawer__body" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkoutButton">Checkout</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__card">
+      <button class="icon-button modal__close" id="closeCheckout" aria-label="Close">&times;</button>
+      <div class="modal__body" id="checkoutBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
